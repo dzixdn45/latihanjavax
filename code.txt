@@ -1,0 +1,12 @@
+Connection con = DriverManager.getConnection("jdbc:mysql://localhost/sistemlogin","root","");
+            ResultSet as = con.createStatement().executeQuery("select * from login where username='"+jTextField1.getText()+"' and password='"+String.valueOf(jPasswordField1.getText())+"'");
+            
+            if(as.next()){
+                Sudah ad = new Sudah();
+                ad.setVisible(true);
+                dispose();
+            } else {
+                JOptionPane.showMessageDialog(rootPane,"Masukan username dan password dengan benar");
+            }
+            
+            }
